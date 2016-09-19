@@ -1,0 +1,36 @@
+#header
+  .container
+    .nav.navbar-nav
+      = link_to "Home", root_path, class: "btn btn-default"
+    .nav.navbar-nar.pull-right
+      -# = link_to "Log Out", root_path, class: "btn btn-default"
+      = link_to "Sign In", root_path, class: "btn btn-primary"
+      = link_to "Log In", root_path, class: "btn btn-default"
+      -# - if user_signed_in?
+        = link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger'
+      -# - else
+        = link_to 'Sign Up', new_user_registration_path , class: 'btn btn-default'
+        = link_to 'Log In', new_user_session_path , class: 'btn btn-default'
+
+
+-#
+-# .container
+-#   %nav.navbar.navbar-light.bg-faded
+-#     %button.navbar-toggler.hidden-sm-up{"aria-controls" => "navbar-header", "data-target" => "#navbar-header", "data-toggle" => "collapse", :type => "button"}
+-#       \☰
+-#     #navbar-header.collapse.navbar-toggleable-xs
+-#       %a.navbar-brand{:href => "#"} Navbar
+-#       %ul.nav.navbar-nav
+-#         %li.nav-item.active
+-#           %a.nav-link{:href => "#"}
+-#             Home
+-#             %span.sr-only (current)
+-#         %li.nav-item
+-#           %a.nav-link{:href => "#"} Features
+-#         %li.nav-item
+-#           %a.nav-link{:href => "#"} Pricing
+-#         %li.nav-item
+-#           %a.nav-link{:href => "#"} About
+-#       %form.form-inline.pull-xs-right
+-#         %input.form-control{:placeholder => "Search", :type => "text"}/
+-#         %button.btn.btn-success-outline{:type => "submit"} Search
