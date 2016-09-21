@@ -1,0 +1,1 @@
+json.partial! "daily_boards/daily_board", daily_board: @daily_board

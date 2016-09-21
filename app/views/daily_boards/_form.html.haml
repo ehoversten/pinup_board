@@ -1,0 +1,32 @@
+#new_form
+  -# .row
+  -#   .col-md-6.offset-md-3
+  = simple_form_for @daily_board, html: { multipart: true } do |f|
+    - if @daily_board.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@daily_board.errors.count, "error")} prohibited this daily_board from being saved:"
+        %ul
+          - @daily_board.errors.full_messages.each do |msg|
+            %li= msg
+    .row
+      .col-md-3
+
+      -# .col-md-6.offset-md-3
+      .col-md-6
+        .field
+          = f.label :catagory
+          = f.text_field :catagory, class: 'form-control'
+        .field
+          = f.label :title
+          = f.text_field :title, class: 'form-control'
+        .field
+          = f.label :description
+          = f.text_area :description, class: 'form-control'
+        .field
+          = f.file_field :image
+        .actions
+          = f.submit 'Save', class: "btn btn-primary"
+
+      .col-md-3
+
+      -# html: { multipart: true }

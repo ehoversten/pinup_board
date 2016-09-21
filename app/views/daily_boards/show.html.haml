@@ -1,0 +1,25 @@
+.container
+  .row
+    .col-md-4
+      = image_tag @daily_board.image.url(:medium)
+    .col-md-6
+      %p#notice= notice
+
+      %h3
+        %b Catagory:
+        = @daily_board.catagory
+      %p
+        %b Title:
+        = @daily_board.title
+      %p
+        %b description:
+        = @daily_board.description
+
+      = link_to 'Edit', edit_daily_board_path(@daily_board), class: "btn btn-success"
+      \|
+      = link_to 'Destroy', daily_board_path, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
+      \|
+      = link_to 'Back', daily_boards_path, class: "btn btn-warning"
+
+  -# .row
+  -#   .col-md-3

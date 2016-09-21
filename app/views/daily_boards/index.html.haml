@@ -1,0 +1,46 @@
+#daily_index
+  .container
+    .row#listing
+      %h1 Listing All Boards
+
+    - @daily_boards.each_slice(3) do |boards|
+      .row#boards
+        - boards.each do |board|
+          .card
+            .col-md-4#boards
+              .card-img-top
+                = image_tag board.image.url(:medium)
+              .card-block
+                %h4= board.catagory
+                = link_to board.title, board
+                %p= board.description
+
+
+    -# .row
+    -#   .col-md-3
+    -#   .col-md-6.offset-md-3
+    -#     %table
+    -#       %thead
+    -#         %tr
+    -#           %th Catagory
+    -#           %th Title
+    -#           %th description
+    -#           -# %th
+    -#           -# %th
+    -#           -# %th
+    -#
+    -#       %tbody
+    -#         - @daily_boards.each do |daily_board|
+    -#           %tr
+    -#             %td= daily_board.catagory
+    -#             %td= daily_board.title
+    -#             %td= daily_board.description
+    -#             %td= link_to 'Show', daily_board, class: "btn btn-default"
+    -#             %td= link_to 'Edit', edit_daily_board_path(daily_board), class: "btn btn-default"
+    -#             %td= link_to 'Destroy', daily_board, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"
+
+        %br
+      .col-md-3
+    .row#new_board
+      .col-md-6.offset-md-3
+        = link_to 'New Daily board', new_daily_board_path, class: "btn btn-primary"

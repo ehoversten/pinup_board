@@ -1,0 +1,1 @@
+json.array! @daily_boards, partial: 'daily_boards/daily_board', as: :daily_board
